@@ -85,12 +85,24 @@ public final class Griglia {
         return this.altezza;
     }
 
-    public boolean isAlive(final int i, final int j) {
+    /**
+     * Metodo osservazionale che permette di conoscere lo stato di una cella 
+     * posizionata alle coordinate passate come parametri.
+     * 
+     * @param i coordinata altezza.
+     * @param j coordinata base.
+     * @return {@code true} sse la cella in posizione {@code (i,j)} è viva.
+     * @throws IndexOutOfBoundsException se {@code i < 0 || i > this.altezza} oppure {@code j < 0 || j > this.base}
+     */
+    public boolean isAlive(final int i, final int j) throws IndexOutOfBoundsException {
         if(i < 0 || i > this.altezza) throw new IndexOutOfBoundsException();
         if(j < 0 || j > this.base) throw new IndexOutOfBoundsException();
         return this.mtrx[i][j].isAlive();
     }
 
+    /**
+     * Metodo mutazionale che evolve la griglia secondo le regole del gioco.
+     */
     public void evolve() {
         Cella[][] nuovaMtrx = new Cella[this.altezza][this.base];
         for(int i = 0; i < this.altezza; i++)
