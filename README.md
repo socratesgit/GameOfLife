@@ -1,6 +1,6 @@
 # GAME OF LIFE
 
-Questo progetto è una implementazione in Java di Game of Life.
+Questo progetto è una implementazione in Java (openjdk v.16.0.2) di Game of Life.
 
 ## Workflow
 
